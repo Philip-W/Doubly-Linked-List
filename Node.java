@@ -8,6 +8,7 @@ public class Node {
   private Node next;
   private Node prev;
 
+
   public Node(Object o){
     next = null;
     prev = null;
@@ -21,7 +22,7 @@ public class Node {
 
   public void setNext(Node k) { next = k; }
 
-  public Prev() { return prev; }
+  public Node Prev() { return prev; }
 
-  public setPrev(Node k) { prev = k; }
+  public void setPrev(Node k) { prev = k; }
 }
