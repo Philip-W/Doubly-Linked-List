@@ -34,11 +34,22 @@ public class doubleLinkList{
 
   public void addNode(Object o, int index){
     //Inserts a Node after the given index (might bug due to null head)
+    //if the index is > size, it will be appended to teh end of the list.
+
     Node n = new Node(o);
-    if (index < 0 || index > size + 1){ return; }
     Node before = head;
     Node after;
-    for (int i = 1; i != index - 1; ++i){
+
+    if (index < 0){
+      throw new IndexOutOfBoundsException("Index "+ index + " is negative!");
+    }
+
+    if (size == 0){
+      addToTail(o);
+      return;
+    }
+
+    for (int i = 1; i <index && before.Next() != null; ++i){
       before = before.Next();
     }
     after = before.Next();
